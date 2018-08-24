@@ -33,10 +33,15 @@ values =[@first_name,@last_name,@age,@id]
 SqlRunner.run(sql,values)
 end
 
+def delete()
+  sql = "DELETE FROM clients WHERE id = $1"
+  values =[@id]
+  SqlRunner.run(sql,values)
+end
 
 def self.all()
   sql = "SELECT * FROM clients"
-  result = SqlRunner.run(sql)
+  clients = SqlRunner.run(sql)
   return clients.map{ |client| Client.new(client)}
 end
 
