@@ -28,7 +28,7 @@ end
 def self.all()
   sql = "SELECT * FROM clients"
   result = SqlRunner.run(sql)
-  return results.map{|client|Client.new(client)}
+  return clients.map{ |client| Client.new(client)}
 end
 
 
