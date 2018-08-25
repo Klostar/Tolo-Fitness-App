@@ -46,8 +46,8 @@ class Client
   end
 
   def self.delete_all()
-    sql = "DELETE * FROM clients"
-    SqlRunner.run(sql)
+    sql = "DELETE FROM clients"
+  SqlRunner.run(sql)
   end
 
 end

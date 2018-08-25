@@ -13,11 +13,23 @@ class Booking
     @capacity =10
   end
 
-def full_capacity
-  @capacity
-  return "Sorry We Are Full" if @capacity > 10
-else
-  return "Welcome"
+  def full_capacity
+    @capacity
+    if @capacity > 10
+      return "Sorry We Are Full"
+    else
+      return "Welcome"
+    end
+  end
+
+def save()
+  sql = "INSERT INTO bookings
+  (type,instructor,capacity)
+  VALUES($1,$2,$3) RETURNING id"
+  values = [@type,@instructor,@capacity]
+  result = SqlRunner.run(sql,values)
+  @id = result.first()['id'].to_i
 end
+
 
 end

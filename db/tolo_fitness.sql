@@ -13,8 +13,8 @@ CREATE TABLE clients(
 CREATE TABLE bookings(
     id SERIAL4 PRIMARY KEY,
     type VARCHAR(255),
-    instructor VARCHAR(255)
-
+    instructor VARCHAR(255),
+    capacity INT4
 );
 
 CREATE TABLE pts(
