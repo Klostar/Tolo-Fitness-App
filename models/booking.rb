@@ -2,8 +2,8 @@ require_relative("../db/sql_runner.rb")
 
 class Booking
 
-  attr_reader :id, :type, :client, :instructor
-  attr_accessor :capacity
+  attr_accessor :type, :client, :instructor
+  attr_reader :id, :capacity
 
   def initialize( options )
     @id =options['id'].to_i
@@ -30,6 +30,16 @@ def save()
   result = SqlRunner.run(sql,values)
   @id = result.first()['id'].to_i
 end
+
+def update()
+  sql = "UPDATE bookings
+  SET(type,imstructor,capacity)
+  = ($1,$2,$3) WHERE id = $4"
+  values = [@type, @instructor, @capacity]
+  SqlRunner.run(sql,values)
+end
+
+
 
 
 end
