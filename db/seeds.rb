@@ -62,9 +62,45 @@ booking4 = Booking.new({
             })
 booking4.save()
 
+pt1 = Pt.new({
+  "name" => "thomas",
+  "specialty" => "bootcamp",
+  "client_id" => client1.id,
+  "booking_id" => booking1.id
+  })
+  pt1.save()
 
+pt2 = Pt.new({
+  "name" => "sam",
+  "specialty" => "ladies who lift",
+  "client_id" => client2.id,
+  "booking_id" => booking2.id
+  })
+pt2.save()
 
+pt3 = Pt.new({
+  "name" => "jonny",
+  "specialty" => "circuits",
+  "client_id" => client3.id,
+  "booking_id" => booking3.id
+  })
+pt3.save()
 
+pt4 = Pt.new({
+  "name" => "jonny",
+  "specialty" => "circuits",
+  "client_id" => client4.id,
+  "booking_id" => booking4.id
+  })
+pt3.save()
+
+pt5 = Pt.new({
+  "name" => "jonny",
+  "specialty" => "circuits",
+  "client_id" => client1.id,
+  "booking_id" => booking4.id
+  })
+pt5.save()
 
 binding.pry
 nil

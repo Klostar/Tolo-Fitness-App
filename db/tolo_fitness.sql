@@ -21,7 +21,7 @@ CREATE TABLE pts(
     id SERIAL4 PRIMARY KEY,
     name VARCHAR(255),
     specialty VARCHAR(255),
-    client_id INT4 REFERENCES clients(id) ON DELETE CASCADE,
-    booking_id INT4 REFERENCES bookings(id) ON DELETE CASCADE
+    client_id INT4 REFERENCES clients(id) ON DELETE CASCADE NOT NULL,
+    booking_id INT4 REFERENCES bookings(id) ON DELETE CASCADE NOT NULL
 
 );
