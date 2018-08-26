@@ -22,38 +22,55 @@ class Booking
     end
   end
 
-def save()
-  sql = "INSERT INTO bookings
-  (type,instructor,capacity)
-  VALUES($1,$2,$3) RETURNING id"
-  values = [@type,@instructor,@capacity]
-  result = SqlRunner.run(sql,values)
-  @id = result.first()['id'].to_i
-end
+  def save()
+    sql = "INSERT INTO bookings
+    (type,instructor,capacity)
+    VALUES($1,$2,$3) RETURNING id"
+    values = [@type,@instructor,@capacity]
+    result = SqlRunner.run(sql,values)
+    @id = result.first()['id'].to_i
+  end
 
-def update()
-  sql = "UPDATE bookings
-  SET(type,imstructor,capacity)
-  = ($1,$2,$3) WHERE id = $4"
-  values = [@type, @instructor, @capacity]
-  SqlRunner.run(sql,values)
-end
+  def update()
+    sql = "UPDATE bookings
+    SET(type,imstructor,capacity)
+    = ($1,$2,$3) WHERE id = $4"
+    values = [@type, @instructor, @capacity]
+    SqlRunner.run(sql,values)
+  end
 
-def delete()
-  sql = "DELETE FROM bookings WHERE id = $1"
-  values =[@id]
-  SqlRunner.run(sql,values)
-end
+  def delete()
+    sql = "DELETE FROM bookings WHERE id = $1"
+    values =[@id]
+    SqlRunner.run(sql,values)
+  end
 
-def self.all()
-  sql = "SELECT * FROM bookings"
-  bookings = SqlRunner.run(sql)
-  return bookings.map{ |booking| Booking.new(booking)}
-end
+  # display all the clients for a particular booking
+  def clients()
+    sql = "SELECT clients.* FROM clients INNER JOIN pts ON clients.id
+          = pts.client_id WHERE booking_id = $1"
+    values =[@id]
+    clients = SqlRunner.run(sql,values)
+    result = clients.map{|client| Client.new(client)}
+    return result
+  end
 
-def self.delete_all()
-  sql = "DELETE FROM bookings"
-  SqlRunner.run(sql)
-end
+
+
+  def self.all()
+    sql = "SELECT * FROM bookings"
+    bookings = SqlRunner.run(sql)
+    return bookings.map{ |booking| Booking.new(booking)}
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM bookings"
+    SqlRunner.run(sql)
+  end
+
+  def self.map_items(data)
+    result = data.map{|booking| Booking.new(booking)}
+    return result
+  end
 
 end
