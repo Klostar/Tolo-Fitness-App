@@ -2,75 +2,60 @@ require_relative("../db/sql_runner.rb")
 
 class Booking
 
-  attr_accessor :type, :client, :instructor
-  attr_reader :id, :capacity
+  attr_reader :id
+  attr_accessor :client_id, :gymclass_id
 
   def initialize( options )
-    @id =options['id'].to_i if options['id']
-    @type =options ['type']
-    @client =[]
-    @instructor =options['instructor']
-    @capacity =10
-  end
-
-  def full_capacity
-    @capacity
-    if @capacity > 10
-      return "Sorry We Are Full"
-    else
-      return "Welcome"
-    end
+    @id = options['id'].to_i if options['id']
+    @client_id = options['client_id'].to_i
+    @gymclass_id = options['gymclass_id'].to_i
   end
 
   def save()
     sql = "INSERT INTO bookings
-    (type,instructor,capacity)
-    VALUES($1,$2,$3) RETURNING id"
-    values = [@type,@instructor,@capacity]
+    (client_id,gymclass_id)
+    VALUES($1,$2) RETURNING id"
+    values = [@client_id, @gymclass_id]
     result = SqlRunner.run(sql,values)
     @id = result.first()['id'].to_i
   end
 
-  def update()
-    sql = "UPDATE bookings
-    SET(type,imstructor,capacity)
-    = ($1,$2,$3) WHERE id = $4"
-    values = [@type, @instructor, @capacity]
-    SqlRunner.run(sql,values)
+def update()
+sql = " UPDATE clients SET (client_id,gymclass_id) =
+        ($1, $2) WHERE id = $3"
+values =[@client_id,@gymclass_id]
+SqlRunner.run(sql,values)
+end
+
+def delete()
+sql = "DELETE * FROM bookings WHERE id = $1"
+values = [@id]
+SqlRunner.run(sql,values)
+end
+
+  def gymclass()
+    sql = "SELECT * FROM gymclasses WHERE id = $1"
+    values = [@gymclass_id]
+    gymclass = SqlRunner.run(sql,values).first
+    return GymClass.new(gym_class)
   end
 
-  def delete()
-    sql = "DELETE FROM bookings WHERE id = $1"
-    values =[@id]
-    SqlRunner.run(sql,values)
+  def client()
+    sql = "SELECT * FROM clients WHERE id = $1"
+    values =[@client_id]
+    clients = SqlRunner.run(sql,values).first
+    return Client.new(client)
   end
 
-  # display all the clients for a particular booking
-  def clients()
-    sql = "SELECT clients.* FROM clients INNER JOIN pts ON clients.id
-          = pts.client_id WHERE booking_id = $1"
-    values =[@id]
-    clients = SqlRunner.run(sql,values)
-    result = clients.map{|client| Client.new(client)}
-    return result
-  end
-
-
-
-  def self.all()
-    sql = "SELECT * FROM bookings"
-    bookings = SqlRunner.run(sql)
-    return bookings.map{ |booking| Booking.new(booking)}
-  end
-
-  def self.delete_all()
+  def self.delete_all
     sql = "DELETE FROM bookings"
     SqlRunner.run(sql)
   end
 
-  def self.map_items(data)
-    result = data.map{|booking| Booking.new(booking)}
-    return result
+  def self.all()
+    sql = "SELECT * FROM bookings"
+    data = SqlRunner.run(sql)
+    return data.map{ |booking| Booking.new(booking)}
   end
 
 end

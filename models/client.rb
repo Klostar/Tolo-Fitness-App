@@ -39,6 +39,17 @@ class Client
     SqlRunner.run(sql,values)
   end
 
+  # display all the gymclasses for a particular client
+  def gymclasses()
+    sql = "SELECT gymclasses.* FROM gymclasses INNER JOIN bookings
+          ON gymclasses.id = bookings.gymclass_id WHERE client_id = $1"
+  values = [@id]
+  gymclasses = SqlRunner.run(sql,values)
+  result = gymclasses.map{|gymclass| GymClass.new(gymclass)}
+  return result
+  end
+
+
   def self.all()
     sql = "SELECT * FROM clients"
     clients = SqlRunner.run(sql)
@@ -49,5 +60,6 @@ class Client
     sql = "DELETE FROM clients"
   SqlRunner.run(sql)
   end
+
 
 end

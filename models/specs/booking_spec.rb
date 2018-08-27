@@ -1,36 +1,30 @@
-require("minitest/autorun")
-require("minitest/rg")
-require_relative("../booking.rb")
-require_relative("../client.rb")
+#not needed due to refactoing the code. 
 
-class BookingTest < MiniTest::Test
-
-def setup()
-options = {"id" => 1, "type" => "spin", "client" => [], "instructor" => "Thomas", }
-@booking = Booking.new(options)
-
-end
-
-def test_type
-  result = @booking.type()
-  assert_equal("spin",result)
-end
-
-def test_instructor
-  result = @booking.instructor()
-  assert_equal("Thomas",result)
-end
-
-def test_capacity
-  result = @booking.capacity()
-  assert_equal(10,result)
-end
-
-def test_full_capacity
-  @booking.capacity += 1
-  assert_equal("Sorry We Are Full" , @booking.full_capacity)
-end
-
-
-
-end
+# require("minitest/autorun")
+# require("minitest/rg")
+# require_relative("../booking.rb")
+#
+# class BookingTest < MiniTest::Test
+#
+# def setup()
+# options = { "id" => 1,
+#             # "name" => "thomas",
+#             # "specialty" => "bootcamp"
+#            }
+#
+#
+#   @booking = Booking.new( options )
+# end
+#
+# #changing code to make more sense... test no longer needed
+# # def test_specialty
+# # result = @booking.specialty
+# # assert_equal("bootcamp", result)
+# # end
+#
+# def test_name
+#   result = @pt.name
+# assert_equal("thomas",result)
+# end
+#
+# end
