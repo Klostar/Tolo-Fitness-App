@@ -1,0 +1,8 @@
+<h1>Available Gym Classes</h1>
+
+<% @gymclass.each do |gymclass| %>
+<p> Type: <%= gymclass.type %> </p>
+<p> Instructor <%= gymclass.instructor() %></p>
+
+
+<% end %>
