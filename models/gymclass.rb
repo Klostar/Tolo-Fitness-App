@@ -6,7 +6,7 @@ class GymClass
   attr_reader :id
 
   def initialize( options )
-    @id =options['id'].to_i if options['id']
+    @id = options['id'].to_i if options['id']
     @type =options ['type']
     @client =[]
     @instructor =options['instructor']
@@ -77,6 +77,16 @@ class GymClass
     gymclasses = SqlRunner.run(sql)
     return gymclasses.map{ |gymclass| GymClass.new(gymclass)}
   end
+
+  #find by id method
+
+def self.find(id)
+  sql = "SELECT * FROM gymclasses WHERE id = $1"
+  values =[id]
+  gymclass = SqlRunner.run(sql,values)
+  result = GymClass.new(gymclass.first)
+  return result
+end
 
   def self.delete_all()
     sql = "DELETE FROM gymclasses"

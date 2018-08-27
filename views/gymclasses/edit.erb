@@ -1,0 +1,19 @@
+<form method="post" action="/gymclasses/<%@gymclass.id %>">
+<label for="type-field">Select your class</label>
+<select name ="type" id=type_field>
+  <option value="bootcamp"
+  <%= "selected" if @gymclass.type == "bootcamp"%>
+  >Bootcamp</option>
+
+<option
+value="kettlebells" <%="selected" if @gymclass.type == "kettlebells" %>
+  >KettleBells</option>
+
+<option
+value="ladies who lift" <%="selected" if @gymclass.type == "ladies who lift" %>
+    >Ladies Who Lift</option>
+
+<option
+value="circuits" <%="selected" if @gymclass.type == "circuits" %>
+    >Circuits</option>
+  </select>
