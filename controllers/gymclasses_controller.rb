@@ -26,12 +26,12 @@ get '/gymclasses/:id' do
   @gymclass = GymClass.find( params[:id] )
   erb( :"gymclasses/show" )
 
-  # #create
-  # post "/gymclasses/:id" do
-  #   @gymclass = Gymclass.new(params)
-  #   @gymclass.save
-  #   erb(:create)
-  # end
+  #create
+post "/gymclasses" do
+    @gymclass = GymClass.new( params )
+    @gymclass.save()
+    erb(:"gymclasses/create")
+  end
 
 # get '/gymclasses/:id/edit' do
 #   @gymclass = GymClass.find(params[:id])

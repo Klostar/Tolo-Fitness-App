@@ -2,9 +2,9 @@
 
 <% @gymclass.each do |gymclass| %>
 <p> Type: <%= gymclass.type %> </p>
-<p> Instructor <%= gymclass.instructor() %></p>
+<p> Instructor: <%= gymclass.instructor() %></p>
 
-<p></a href = "gymclass/<%=gymclass.id %>">Show Further Info</a></p>
-</hr>
+<p></a href="gymclasses/<%=gymclass.id %>">Show Further Info</a></p>
+<hr />
 
 <% end %>
