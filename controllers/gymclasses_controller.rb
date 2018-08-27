@@ -14,3 +14,7 @@ get '/gymclasses' do
 @gymclass = GymClass.all()
 erb( :"gymclasses/index" )
 end
+
+get '/gymclasses/new' do
+  erb(:"gymclasses/new")
+end
