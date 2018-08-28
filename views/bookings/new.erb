@@ -20,5 +20,16 @@
       </select>
     </label>
 
+    <label>
+      Select Instructor:
+      <select name="gymclass_id">
+        <% for gymclass in @gymclass%>
+        <option value="<%= gymclass.id %>"><%=gymclass.instructor %></option>
+        <%end%>
+      </select>
+    </label>
+
+
+
     <input class "btn btn--action" type=submit value="Book">
   </form>
