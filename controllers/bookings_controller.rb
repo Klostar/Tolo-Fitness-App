@@ -11,11 +11,27 @@ also_reload( '../models/*' )
 #index
 get '/bookings' do
   @bookings = Booking.all()
-  erb( :"bookings/index")
+  erb( :"bookings/index" )
 end
 
+#create new booking
 get '/bookings/new' do
-  erb(:new)
+  @gymclass = GymClass.all()
+  @client = Client.all()
+  erb(:"booking/new")
 end
+#
+# #update
+#
+# post '/bookings' do
+#   @booking = Booking.new(params)
+#   @booking.save()
+#   redirect to("/bookings")
+#
+# end
+
+#delete
+
+
 
 # #

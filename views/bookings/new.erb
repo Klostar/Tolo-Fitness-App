@@ -1,2 +1,24 @@
-<form method="post" action="/bookings">
-  <label for=
+<h1>New Bookings</h1>
+
+
+<form action= "/bookings" method ="post">
+  <label>
+    Select a Client:
+    <select name="client_id">
+      <% for client in @clients%>
+      <option value="<%= client.id%>"><%=client.first_name %></option>
+        <%end%>
+      </select>
+    </label>
+
+    <label>
+      Select a Class:
+      <select name="gymclass_id">
+        <% for gymclass in @gymclasses%>
+        <option value="<%=gymclass.id%>"><%=gymclass.id %></option>
+        <%end%>
+      </select>
+    </label>
+
+    <input class "btn btn--action" type=submit value="Book">
+  </form>
