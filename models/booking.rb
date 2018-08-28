@@ -58,4 +58,10 @@ end
     return data.map{ |booking| Booking.new(booking)}
   end
 
+def self.destroy(id)
+  sql = " DELETE FROM bookings WHERE id = $1"
+  values=[id]
+  booking = SqlRunner.run(sql,values)
+end
+
 end
