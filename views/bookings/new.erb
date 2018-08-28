@@ -5,8 +5,8 @@
   <label>
     Select a Client:
     <select name="client_id">
-      <% for client in @clients%>
-      <option value="<%= client.id%>"><%=client.first_name %></option>
+      <% for client in @client%>
+      <option value="<%= client.full_name%>"><%=client.full_name %></option>
         <%end%>
       </select>
     </label>
@@ -14,8 +14,8 @@
     <label>
       Select a Class:
       <select name="gymclass_id">
-        <% for gymclass in @gymclasses%>
-        <option value="<%=gymclass.id%>"><%=gymclass.id %></option>
+        <% for gymclass in @gymclass%>
+        <option value="<%=gymclass.type%>"><%=gymclass.type %></option>
         <%end%>
       </select>
     </label>

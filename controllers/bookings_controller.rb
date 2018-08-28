@@ -16,9 +16,9 @@ end
 
 #create new booking
 get '/bookings/new' do
-  @gymclass = GymClass.all()
-  @client = Client.all()
-  erb(:"booking/new")
+  @gymclass = GymClass.all
+  @client = Client.all
+  erb( :"bookings/new" )
 end
 #
 # #update
