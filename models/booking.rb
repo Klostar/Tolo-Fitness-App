@@ -47,6 +47,8 @@ end
     return Client.new(client)
   end
 
+
+
   def self.delete_all
     sql = "DELETE FROM bookings"
     SqlRunner.run(sql)

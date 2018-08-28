@@ -35,7 +35,7 @@ class GymClass
 
   def update()
     sql = "UPDATE gymclasses
-    SET(type,instructor,capacity)
+    SET(type,instructor,capacity,cli)
     = ($1,$2,$3) WHERE id = $4"
     values = [@type, @instructor, @capacity, @id]
     SqlRunner.run(sql,values)
@@ -56,6 +56,16 @@ class GymClass
     result = clients.map{|client| Client.new(client)}
     return result
   end
+
+  def number_of_clients
+    sql = "SELECT count(*) FROM bookings WHERE bookings.gymclass_id =  $1"
+    values = [@id]
+    SqlRunner.run(sql, values).first['count']
+  end
+  #
+  # def number_of_spaces
+  #   return @capacity - number_of_clients
+  # end
 
   #display all bookings i have for a particular gym class as column didnt exist
   #needed double inner join
