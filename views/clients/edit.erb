@@ -1,0 +1,28 @@
+<form method="post" action="/clients/<%=@client.id%>">
+  <input type="hidden" name="_method" value="put">
+  <label for="first-name-field"> First Name:</label>
+  <input
+    type="text"
+    name="first_name"
+    id="first-name-field"
+    value= "<%=@client.first_name()%>"
+    />
+
+    <label for="last-name-field">Last Name:</label>
+    <input
+    type="text"
+    name="last_name"
+    id="last-name-field"
+    value="<%=@client.last_name()%>"
+    />
+
+    <label for="age-field">Age:</label>
+    <input
+    type="number"
+    name="age"
+    id="age-field"
+    value="<%= @client.age()%>"
+    />
+
+    <input class="btn" type="submit" value="Edit">
+  </form>

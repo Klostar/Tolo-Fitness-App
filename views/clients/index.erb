@@ -1,0 +1,12 @@
+<h1>Client List</h1>
+<p> <a href="/clients/new">New</a></p>
+<%@client.each do |client|%>
+
+<p> First Name: <%= client.first_name%> </p>
+<p> Last Name: <%= client.last_name%> </p>
+<p> Age: <%= client.age%></p>
+
+<p><a href ="/clients/<%=client.id %>">Show Further Info </a></p>
+<hr />
+
+<% end %>

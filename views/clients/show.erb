@@ -1,0 +1,10 @@
+<p>First Name: <%= @client.first_name %></p>
+<p>Last Name: <%=@client.last_name %></p>
+<p> Age: <%= @client.age %></p>
+
+
+<a href="/clients/<%=@client.id%>/edit">Edit Details</a>
+
+<form method="post" action="/clients/<%=@client.id%>/delete">
+  <input type="submit" values="Delete"/>
+</form>

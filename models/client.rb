@@ -61,5 +61,12 @@ class Client
   SqlRunner.run(sql)
   end
 
+def self.find(id)
+  sql = "SELECT * FROM clients WHERE id = $1"
+  values =[id]
+  client = SqlRunner.run(sql,values)
+  result = Client.new(client.first)
+  return result
+end
 
 end
