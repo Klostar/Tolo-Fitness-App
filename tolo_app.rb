@@ -8,6 +8,7 @@ require ( 'pry-byebug' )
 require_relative('./controllers/bookings_controller.rb')
 require_relative('./controllers/client_controller.rb')
 require_relative('./controllers/gymclasses_controller.rb')
+require_relative('./controllers/trainer_controller.rb')
 
 
 also_reload( './models/*' )

@@ -1,6 +1,7 @@
 require_relative("../models/client.rb")
 require_relative("../models/gymclass.rb")
 require_relative("../models/booking.rb")
+require_relative("../models/trainer.rb")
 require("pry-byebug")
 
 #ideally wouldnt have delete all method but wanted to have
@@ -52,6 +53,18 @@ booking4.save()
 
 booking5 = Booking.new({"client_id" => client1.id, "gymclass_id" => gymclass4.id })
 booking5.save()
+
+
+#my own extensions
+
+trainer1 = Trainer.new({"name" => "Jonny", "job_title" =>"Personal Trainer", "specialty" => "circuits"})
+trainer1.save
+
+trainer2 = Trainer.new({"name" => "Thomas", "job_title"=>"Gym Manager","specialty" => "bootcamp"})
+trainer2.save
+
+trainer3 = Trainer.new({"name" => "Sam","job_title"=>"Personal Trainer", "specialty" => "ladies who lift"})
+trainer3.save
 
 binding.pry
 nil

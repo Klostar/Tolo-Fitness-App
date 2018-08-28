@@ -5,6 +5,7 @@ require( 'pry-byebug')
 require_relative('../models/booking.rb')
 require_relative('../models/client.rb')
 require_relative('../models/gymclass.rb')
+require_relative('../models/trainer.rb')
 
 also_reload('../models/*')
 

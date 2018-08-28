@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS bookings;
 DROP TABLE IF EXISTS clients;
 DROP TABLE IF EXISTS gymclasses;
+DROP TABLE IF EXISTS trainers;
 
 
 CREATE TABLE clients(
@@ -24,6 +25,9 @@ CREATE TABLE bookings(
 
 );
 
--- will possibly use to make list of pt's on database
-  -- specialty VARCHAR(255),
-      -- name VARCHAR(255),
+CREATE TABLE trainers(
+  id SERIAL4 PRIMARY KEY,
+  name VARCHAR(255),
+  job_title VARCHAR(255),
+  specialty VARCHAR(255)
+);
