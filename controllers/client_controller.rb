@@ -29,7 +29,7 @@ get '/clients/:id' do
 end
 
 #create
-post '/clients' do
+post '/clients/new' do
   @client = Client.new(params)
   @client.save
   redirect to '/clients'
