@@ -25,16 +25,32 @@ end
 get '/gymclasses/:id' do
   @gymclass = GymClass.find( params[:id] )
   erb( :"gymclasses/show" )
+end
 
-  #create
-post "/gymclasses" do
-    @gymclass = GymClass.new( params )
-    @gymclass.save()
-    erb(:"gymclasses/create")
-  end
+#create
+post '/gymclasses' do
+  @gymclass = GymClass.new( params )
+  @gymclass.save
+  redirect to '/gymclasses'
+end
 
-# get '/gymclasses/:id/edit' do
-#   @gymclass = GymClass.find(params[:id])
-# end
+#edit
+get '/gymclasses/:id/edit' do
+  @gymclass = GymClass.find(params[:id])
+  erb(:'gymclasses/edit')
+end
 
+#update
+
+put '/gymclasses/:id' do
+  @gymclass = GymClass.new(params)
+  @gymclass.update()
+  redirect to '/gymclasses'
+end
+
+#delete
+post '/gymclasses/:id/delete' do
+  @gymclass = GymClass.find( params[:id] )
+  @gymclass.delete()
+  redirect to '/gymclasses'
 end

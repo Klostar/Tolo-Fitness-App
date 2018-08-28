@@ -3,6 +3,9 @@ require_relative("../models/gymclass.rb")
 require_relative("../models/booking.rb")
 require("pry-byebug")
 
+#ideally wouldnt have delete all method but wanted to have
+# for practice only
+
 Client.delete_all()
 Booking.delete_all()
 GymClass.delete_all()

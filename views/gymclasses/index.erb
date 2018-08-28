@@ -1,10 +1,11 @@
 <h1>Available Gym Classes</h1>
-
+<p> <a href="/gymclasses/new"> New </a></p>
 <% @gymclass.each do |gymclass| %>
 <p> Type: <%= gymclass.type %> </p>
 <p> Instructor: <%= gymclass.instructor() %></p>
 
-<p></a href="gymclasses/<%=gymclass.id %>">Show Further Info</a></p>
+
+<p><a href="/gymclasses/<%=gymclass.id %>">Show Further Info</a></p>
 <hr />
 
 <% end %>
