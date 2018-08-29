@@ -15,3 +15,20 @@ get '/trainers' do
   @trainer = Trainer.all
   erb( :"trainers/index" )
 end
+
+
+# access to thomas further Info
+
+get '/trainers/thomas' do
+  erb(:"trainers/thomas")
+end
+
+# access to sam further info
+get '/trainers/sam' do
+  erb(:"trainers/sam")
+end
+
+#access to jonny further info
+get '/trainers/jonny' do
+  erb(:"trainers/jonny")
+end

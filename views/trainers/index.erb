@@ -1,11 +1,50 @@
 <h1> Tolo Fitness Staff Members</h1>
-<% @trainer.each do |trainer|%>
 
-<p> Name: <%= trainer.name %></p>
-<p> Job Title: <%= trainer.job_title %></p>
-<p> Specialty: <%= trainer.specialty %></p>
+
+<figure>
+    <img src="/images/Thomas.jpg" height= '300' width='300' alt="Thomas" />
+    <figcaption>
+      <ul>
+        <li>Name: Thomas Crawford </li>
+        <li> Job Title: Gym Manager </li>
+        <li> Specialty : Muscle Tone + Funxtional</li>
+      </ul>
+
+    </figcaption>
+    <p class="btn--wrapper">
+      <a class="btn btn--action" href="/trainers/thomas">More Info</a>
+    </p>
+</figure>
+
+<figure>
+    <img src="/images/Sam.jpg" height= '300' width='300' alt="sam" />
+    <figcaption>
+      <ul>
+        <li>Name: Sam McPhearson </li>
+        <li> Job Title: Personal Trainer </li>
+        <li> Specialty : Ladies Who Lift</li>
+      </ul>
+
+    </figcaption>
+    <p class="btn--wrapper">
+      <a class="btn btn--action" href="/trainers/sam">More Info</a>
+    </p>
+</figure>
+
+<figure>
+    <img src="/images/Jonny.jpg" height= '300' width='300' alt="jonny" />
+    <figcaption>
+      <ul>
+        <li>Name: Jonny McCandless </li>
+        <li> Job Title: Personal Trainer </li>
+        <li> Specialty : Circuits </li>
+      </ul>
+    </figcaption>
+    <p class="btn--wrapper">
+      <a class="btn btn--action" href="/trainers/jonny">More Info</a>
+    </p>
+</figure>
+
 
 
 <hr />
-
-<%end%>
