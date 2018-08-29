@@ -5,9 +5,20 @@
   color:rgb(66, 167, 244);
   cursor:pointer;
   font-family:serif;
+  font-size: 0.8em;
 }
 
 .btn--action:hover{
   background-color: yellow;
 
+
+}
+.btn{
+  height: 20px;
+  background-color: black;
+  width: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  transition: 0.5s;
+  background-image: linear-gradient(to right, #000 0%, #000 51%, #000 100%);
 }
