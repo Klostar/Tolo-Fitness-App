@@ -1,25 +1,30 @@
 <form method="post" action="/gymclasses/<%= @gymclass.id %>">
   <input type="hidden" name="_method" value="put">
-    <label for="type-selection">Select your class</label>
+    <label for="type-selection">Select your class:</label>
 
 <select name ="type" id=type-selection>
   <option value="bootcamp" <%= "selected" if @gymclass.type == "bootcamp" %>>Bootcamp</option>
-
-<option value="kettlebells" <%="selected" if @gymclass.type == "kettlebells" %>>KettleBells</option>
-
-<option value="ladies who lift" <%="selected" if @gymclass.type == "ladies who lift" %>>Ladies Who Lift</option>
-
-<option value="circuits" <%="selected" if @gymclass.type == "circuits" %>>Circuits</option>
-
+  <option value="kettlebells" <%="selected" if @gymclass.type == "kettlebells" %>>KettleBells</option>
+  <option value="ladies who lift" <%="selected" if @gymclass.type == "ladies who lift" %>>Ladies Who Lift</option>
+  <option value="circuits" <%="selected" if @gymclass.type == "circuits" %>>Circuits</option>
 </select>
 
-<label for="instructor-selection"> Select your instructor</label>
+<label for="instructor-selection"> Select your instructor:</label>
 
 <select name="instructor" id="instructor-selection">
   <option value="thomas" <%="selected" if @gymclass.instructor == "thomas"%>>Thomas</option>
   <option value="sam" <%="selected" if @gymclass.instructor == "sam" %>>Sam </option>
   <option value="jonny" <%="selected" if @gymclass.instructor =="jonny"%>> Jonny</option>
 </select>
+
+  <label for="capacity-selection">Capacity</label>
+  <input name="capacity" id="capacity-selection" type="number" value= "<%=@gymclass.capacity%>" disabled >
+
+  <label for="booking-selection">Bookings</label>
+  <input name="booking" id="booking-selection" type="number" value= "<%=@gymclass.number_of_clients%>" disabled >
+
+
+      </select>
 
 <input class ="btn" type="submit" value="Submit">
 

@@ -2,30 +2,41 @@ body{
   background: black url('/images/ToloFitness_background.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
-  color; white;
+  color: white;
   font-family: Georgia, serif;
   padding: 0px;
-  margin: 0px
+  margin: 0px;
+
 }
 
 h1, h2, h3, h4, h5, h6{
   font-family: serif;
   margin: 0px;
-  padding: 0px
-}
-
-a, a:link{
+  padding: 0px;
   color: white;
 }
 
+h1{
+  font-size: 2.5em;
+  font-family: 'Tattoo Ink';
+  color: white;
+ margin-bottom: 20px;
+}
+
+a, a:link{
+  color: rgb(66, 167, 244);
+}
+
 a:visited{
-  color: yellow;
+  color: rgb(66, 167, 244);
 }
 
 nav{
   padding:0px;
   margin:0px;
   padding-right: 15px;
+  color: white;
+
 }
 
 nav ul li{
@@ -33,14 +44,11 @@ nav ul li{
   margin: 0px;
 }
 
-ul{
-  padding: 0px;
-  margin: 0px;
-  list-style-type: disc;
-}
+
 
 main{
   padding: 15px;
+
 }
 
 .flex{
@@ -52,6 +60,7 @@ main{
 }
 
 #content{
-  border-left:1px solid yellow;
+  border-left:1px rgb(66, 167, 244);
   padding-left: 15%;
+
 }
