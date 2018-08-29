@@ -1,0 +1,13 @@
+.btn{
+  border:0px none;
+  border-radius: 3%;
+  padding: 8px 12px;
+  color:rgb(66, 167, 244);
+  cursor:pointer;
+  font-family:serif;
+}
+
+.btn--action:hover{
+  background-color: yellow;
+
+}
