@@ -148,4 +148,8 @@ figcaption {
 
 footer{
   color:white;
+  font-style: italic;
+  font-kerning: normal;
+  font-size: 10px;
+  margin-left: 3em;
 }
