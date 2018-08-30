@@ -4,7 +4,7 @@ input[type="submit"] {
 
 select {
   width: 200px;
- padding: 10px 35px 10px 10px;
+ padding: 10px 35px 10px 20px;
  margin: 15px 0;
  font-size: 0.8em;
  -webkit-appearance: none;

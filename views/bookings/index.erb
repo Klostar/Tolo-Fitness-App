@@ -11,7 +11,7 @@
     <p> <%= Client.find(booking.client_id).full_name %> : <%= GymClass.find(booking.gymclass_id).type%> with <%= GymClass.find(booking.gymclass_id).instructor%> </p>
 
       <form action="/bookings/<%=booking.id%>/delete" method="POST">
-        <input class="btn--danger" type="submit" value ="delete" />
+        <input type="submit" value ="delete" />
       </form>
 
   </li>
