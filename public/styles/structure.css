@@ -47,6 +47,15 @@ h1{
   margin-bottom: 20px;
   margin:  10px 50px 20px 0;
 }
+/* h2{
+  font-size: 1em;
+  font-family: serif;
+  color: white;
+  margin-bottom: 20px;
+  margin:  10px 50px 20px 0;
+margin-left: 1em;
+margin-top: 1em;
+} */
 
 a, a:link{
   color: rgb(66, 167, 244);
@@ -65,14 +74,40 @@ nav{
   margin:0px;
   padding-right: 5px;
   color: white;
-
-
+  padding-top: 20px;
+  margin-top: 20px;
 }
 
 nav ul li{
-  margin-bottom: 15px;
-  margin: 0px;
+
+    list-style-type: none;
+    display: block;
+
+
 }
+.vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 10px;
+border-radius: 5px;
+
+}
+
+.vertical-menu a:hover {
+    background-color: rgb(66, 167, 244);
+    transition: 0.5s;
+
+}
+
+.vertical-menu a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
 
 main{
   padding: 15px;
