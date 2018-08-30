@@ -82,9 +82,11 @@ nav ul li{
 
   list-style-type: none;
   display: block;
+  }
 
-
-}
+  ul{
+    margin: 10px;
+  }
 .vertical-menu a {
   background-color: #eee;
   color: black;
@@ -126,6 +128,7 @@ main{
   border-left:1px rgb(66, 167, 244);
   padding-left: 7%;
   background-color: rgba(0, 0, 0,0.25);
+  margin: 20px;
 
 }
 
@@ -145,6 +148,9 @@ figcaption {
   text-align: left;
 }
 
+form{
+  margin-top: 3em;
+}
 
 footer{
   color:white;
