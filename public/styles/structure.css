@@ -48,11 +48,11 @@ h1{
   margin:  10px 50px 20px 0;
 }
 /* h2{
-  font-size: 1em;
-  font-family: serif;
-  color: white;
-  margin-bottom: 20px;
-  margin:  10px 50px 20px 0;
+font-size: 1em;
+font-family: serif;
+color: white;
+margin-bottom: 20px;
+margin:  10px 50px 20px 0;
 margin-left: 1em;
 margin-top: 1em;
 } */
@@ -80,39 +80,39 @@ nav{
 
 nav ul li{
 
-    list-style-type: none;
-    display: block;
+  list-style-type: none;
+  display: block;
 
 
 }
 .vertical-menu a {
-    background-color: #eee;
-    color: black;
-    display: block;
-    padding: 12px;
-    text-decoration: none;
-    text-align: center;
-    margin-top: 10px;
-border-radius: 5px;
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 5px;
 
 }
 
 .vertical-menu a:hover {
-    background-color: rgb(66, 167, 244);
-    transition: 0.5s;
+  background-color: rgb(66, 167, 244);
+  transition: 0.5s;
 
 
 }
 
 .vertical-menu a.active {
-    background-color: #4CAF50;
-    color: white;
+  background-color: #4CAF50;
+  color: white;
 }
 
 
 main{
   padding: 15px;
-  }
+}
 
 .flex{
   display: flex;
@@ -151,5 +151,7 @@ footer{
   font-style: italic;
   font-kerning: normal;
   font-size: 10px;
-  margin-left: 3em;
+  margin-left: 22em;
+  margin-bottom: -20.5em;
+
 }
