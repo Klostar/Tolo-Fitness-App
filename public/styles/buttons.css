@@ -6,14 +6,16 @@
   cursor:pointer;
   font-family:serif;
   font-size: 0.8em;
+  transition: 0.5s;
+  background-image: linear-gradient(to right, #000 0%, #000 51%, #000 100%)
 }
 
 .btn--action:hover{
-  background-color: yellow;
+  background-color: yellow; */
 
 
 }
-.btn{
+.btn-staff{
   height: 20px;
   background-color: black;
   width: 20px;

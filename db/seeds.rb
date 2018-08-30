@@ -34,8 +34,6 @@ gymclass2.save()
 gymclass3 = GymClass.new({"type" => "kettlebells","instructor" => "jonny","capacity" => 10})
 gymclass3.save()
 
-gymclass4 = GymClass.new({"type" => "circuits","instructor" => "jonny","capacity" => 10})
-gymclass4.save()
 
 #bookings now joining table
 
@@ -48,10 +46,10 @@ booking2.save()
 booking3 = Booking.new({"client_id" => client3.id, "gymclass_id" => gymclass3.id})
 booking3.save()
 
-booking4 = Booking.new({ "client_id" => client4.id, "gymclass_id" => gymclass4.id })
+booking4 = Booking.new({ "client_id" => client4.id, "gymclass_id" => gymclass3.id })
 booking4.save()
 
-booking5 = Booking.new({"client_id" => client1.id, "gymclass_id" => gymclass4.id })
+booking5 = Booking.new({"client_id" => client1.id, "gymclass_id" => gymclass2.id })
 booking5.save()
 
 
