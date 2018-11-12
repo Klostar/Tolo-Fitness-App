@@ -52,3 +52,5 @@ So that the class can't be over-booked
 
 Acceptance Criteria: Gym managers should be able to give each class a maximum capacity
 Acceptance Criteria: Gym managers should not be able to assign members to a class that is already full. (At capacity)
+
+to run application in terminal ruby tolo_fitness_app.rb which will run sinatra then open localhost: 4567
