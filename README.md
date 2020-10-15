@@ -35,22 +35,4 @@ As a gym manager
 I want to be able to add a user to a class
 So that I can book their place
 
-Acceptance Criteria: Gym managers should be able to assign members to classes.
-
-View all customers assigned to a class
-As a gym manager
-I want to view all members assigned to a class
-So that I can see which classes are going to be busy
-
-Acceptance Criteria: Gym managers should be able to view a list of classes, and see the members that will be attending that class.
-
-User Stories - Possible Extensions
-Classes should have a maximum capacity
-As a gym manager
-I want to be able to assign a maximum capacity to a class
-So that the class can't be over-booked
-
-Acceptance Criteria: Gym managers should be able to give each class a maximum capacity
-Acceptance Criteria: Gym managers should not be able to assign members to a class that is already full. (At capacity)
-
 to run application in terminal ruby tolo_fitness_app.rb which will run sinatra then open localhost: 4567
